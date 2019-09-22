@@ -9,7 +9,7 @@ using namespace std;
     Imprime as opções disponíveis para o ecrã, pede a opção desejada pelo utilizador, 
     e chama o código responsável pela mesma.
 */
-void printAndChooseOption(int &option, vector<string> &listItems, vector<double> &prices)
+void printAndChooseOption(int &option, vector<string> &cartItems, vector<double> &prices)
 {
     vector<string> options{"Sair do programa", "Ver itens", "Adicionar item", "Atualizar item", "Remover item"};
     string newItem;
@@ -20,7 +20,7 @@ void printAndChooseOption(int &option, vector<string> &listItems, vector<double>
         cout << i << ". " << options.at(i) << endl;
     }
 
-    cout << "Escolha uma opção (0-" << options.size() << "): ";
+    cout << "Escolha uma opção (0-" << options.size() - 1 << "): ";
 
     cin >> option;
     cin.ignore(10000, '\n');
@@ -42,7 +42,7 @@ void printAndChooseOption(int &option, vector<string> &listItems, vector<double>
         getline(cin, newItem);
         cout << "Preço (€): ";
         cin >> price;
-        listItems.push_back(newItem);
+        cartItems.push_back(newItem);
         prices.push_back(price);
         cout << "Adicionado item: " << newItem << endl;
         break;
@@ -66,17 +66,17 @@ int main()
     // DECLARAÇÂO DAS VARIÀVEIS PRINCIPAIS
 
     int option = -1;
-    vector<string> listItems;
+    vector<string> cartItems;
     vector<double> prices;
     string name;
 
-    cout << "Bem-vindo à MyShoppingList!" << endl;
+    cout << "Bem-vindo ao MyShoppingCart!" << endl;
     cout << "Qual é o teu nome? ";
     getline(cin, name);
     cout << "Olá " << name << "!" << endl;
 
     while (option != 0)
-        printAndChooseOption(option, listItems, prices);
+        printAndChooseOption(option, cartItems, prices);
 
     return 0;
 }
