@@ -24,14 +24,27 @@ class ShoppingCart {
 private:
     vector <Item> cart;
 public:
+    double sumPrices() {
+        double sum = 0;
+
+        for (int i = 0; i < cart.size(); i++) {
+            Item item = cart.at(i);
+            sum += item.getPrice();
+        }
+
+        return sum;
+    }
+    
     void printItems() {
         int size = cart.size();
+        double total = sumPrices();
 
         cout << "ITENS NO CARRINHO DE COMPRAS" << endl;
 
         if (size == 0) {
             cout << "O carrinho de compras está vazio!" << endl;
         }
+
 
         for (int i = 0; i < size; i++) {
             Item item = cart.at(i);
@@ -40,7 +53,7 @@ public:
 
             cout << i + 1 << " - " << name << " - " << price << "€" << endl;
         }
-        double total = sumPrices();
+
         cout << "Total: " << total << "€" << endl;
     }
 

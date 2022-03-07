@@ -24,6 +24,39 @@ class ShoppingCart {
 private:
     vector <Item> cart;
 public:
+    double sumPrices() {
+        double sum = 0;
+
+        for (int i = 0; i < cart.size(); i++) {
+            Item item = cart.at(i);
+            sum += item.getPrice();
+        }
+
+        return sum;
+    }
+    
+    void printItems() {
+        int size = cart.size();
+        double total = sumPrices();
+
+        cout << "ITENS NO CARRINHO DE COMPRAS" << endl;
+
+        if (size == 0) {
+            cout << "O carrinho de compras está vazio!" << endl;
+        }
+
+
+        for (int i = 0; i < size; i++) {
+            Item item = cart.at(i);
+            string name = item.getName();
+            double price = item.getPrice();
+
+            cout << i + 1 << " - " << name << " - " << price << "€" << endl;
+        }
+
+        cout << "Total: " << total << "€" << endl;
+    }
+
     void addItem() {
         string newName;
         double price;
@@ -87,39 +120,6 @@ public:
         cout << "Atualizado item " << oldName << " para " << newName << endl;
     }
 
-    double sumPrices() {
-        double sum = 0;
-
-        for (int i = 0; i < cart.size(); i++) {
-            Item item = cart.at(i);
-            sum += item.getPrice();
-        }
-
-        return sum;
-    }
-
-    void printItems() {
-        int size = cart.size();
-        double total = sumPrices();
-
-        cout << "ITENS NO CARRINHO DE COMPRAS" << endl;
-
-        if (size == 0) {
-            cout << "O carrinho de compras está vazio!" << endl;
-        }
-
-
-        for (int i = 0; i < size; i++) {
-            Item item = cart.at(i);
-            string name = item.getName();
-            double price = item.getPrice();
-
-            cout << i + 1 << " - " << name << " - " << price << "€" << endl;
-        }
-
-        cout << "Total: " << total << "€" << endl;
-    }
-
     void printAndChooseOption(int &option) {
         vector <string> options{
                 "Sair do programa",
@@ -137,7 +137,7 @@ public:
 
         cin >> option;
         cin.ignore(10000, '\n');
-        cout << string(2, '\n');
+        cout << endl << endl;
 
         switch (option) {
             case 0:
@@ -145,19 +145,15 @@ public:
                 cout << "Saindo do programa. Obrigado por escolher a nossa aplicação!" << endl;
                 break;
             case 1:
-                // VER ITENS
                 printItems();
                 break;
             case 2:
-                // ADICIONAR ITEM
                 addItem();
                 break;
             case 3:
-                // ATUALIZAR ITEMS
                 updateItem();
                 break;
             case 4:
-                // REMOVER ITEMS
                 removeItem();
                 break;
             default:
@@ -167,13 +163,9 @@ public:
 
         cout << endl << endl;
     }
-
 };
 
-int main()
-{
-    // DECLARAÇÂO DAS VARIÀVEIS PRINCIPAIS
-
+int main() {
     int option = -1;
     string name;
 
