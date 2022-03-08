@@ -5,16 +5,6 @@
 
 using namespace std;
 
-int function1(vector<int> values) {
-    int total = 0;
-
-    for (int i = 0; i < values.size(); ++i) {
-        total += values.at(i);
-    }
-
-    return total;
-}
-
 int main() {
     vector<int> values(100000000);
     auto f = []() -> int { return rand() % 10000; };
