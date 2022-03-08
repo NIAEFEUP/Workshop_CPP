@@ -1,7 +1,7 @@
 /**
-* Explicar o que variáveis são "caixas" onde se guardam coisas e que começam vazias.
-* Que há caixas para guitarras, para violinos, enquanto em c++ há variáveis para inteiros, strings e booleanos
-* Mandar refazer o programa para perguntar a idade, usando uma variável de inteiro
+* Explicar o que variï¿½veis sï¿½o "caixas" onde se guardam coisas e que comeï¿½am vazias.
+* Que hï¿½ caixas para guitarras, para violinos, enquanto em c++ hï¿½ variï¿½veis para inteiros, strings e booleanos
+* Mandar refazer o programa para perguntar a idade, usando uma variï¿½vel de inteiro
 *
 */
 
@@ -12,9 +12,9 @@ using namespace std;
 int main()
 {
 	string variable;
-	cout << "Hey there, what's your name?\n";
+	cout << "Hey there, what's your name?" << endl;
 	cin >> variable;
 
-	cout << "\nHello " << variable << "\n";
+	cout << "Hello " << variable << endl;
 	return 0;
 }

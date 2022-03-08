@@ -7,12 +7,15 @@
 
 using namespace std;
 
-int main()
-{
-	int variable;
-	cout << "Hey there, what's your age?\n";
-	cin >> variable;
+int main() {
+    string name;
+    cout << "Hey there, what's your name?" << endl;
+    cin >> name;
 
-	cout << "\n Your age is " << variable << "\n";
-	return 0;
+    cout << "Hello " << name << ", what's your age?" << endl;
+
+    int age;
+    cin >> age;
+    cout << "Your age is " << age << endl;
+    return 0;
 }
