@@ -1,37 +1,35 @@
-/**
-* explicar ifs
-*/
-
 #include <iostream>
 
 using namespace std;
 
-int main()
-{
-	bool t = true;
-	bool f = false;
-
+int main() {
 	int number;
-
 	cin >> number;
 
+	// testa se um numero e igual a 5
 	if (number == 5) {
-		cout << "You have entered 5  \n";
+		cout << "five\n";
 	}
 	else {
-		cout << "You haven't entered 5  \n";
+		cout << "not five\n";
 	}
 
-	cin >> number;
+	int a, b;
+	cin >> a >> b;
 
-	if (number == 1) 
-		cout << 1 << endl;
-	else if (number == 3)
-		cout << "three" << endl;
-	else
-		cout << "other" << endl;
+	// testa qual dos numeros dados por input e maior
+	if (a < b) {
+		cout << "a is lower than b" << endl;
+	}
+	else if (a > b) {
+		cout << "b is higher than a" << endl;
+	}
+	else {
+		cout << "a is equal to b" << endl;
+	}
 
-	if (t) {
+	// testa condicao que e sempre verdadeira
+	if (true && 1 < 2) {
 		cout << "this will print" << endl;
 	}
 	else {
@@ -40,5 +38,3 @@ int main()
 
 	return 0;
 }
-
-
