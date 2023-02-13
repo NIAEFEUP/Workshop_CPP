@@ -5,46 +5,43 @@
 
 using namespace std;
 
-/*
-    Imprime as opções disponíveis para o ecrã, pede a opção desejada pelo utilizador, 
-    e chama o código responsável pela mesma.
-*/
-void printAndChooseOption(int &option, vector<string> &cartItems, vector<double> &prices)
-{
-    vector<string> options{"Sair do programa", "Ver itens", "Adicionar item", "Atualizar item", "Remover item"};
+void printAndChooseOption(int& option, vector<string>& cartItems, vector<double>& prices) {
+    vector<string> options = {
+        "Sair do programa", 
+        "Ver itens", 
+        "Adicionar item", 
+        "Atualizar item", 
+        "Remover item"
+    };
 
     for (int i = 0; i < options.size(); i++)
-    {
         cout << i << ". " << options.at(i) << endl;
-    }
 
-    cout << "Escolha uma opção (0-" << options.size() - 1 << "): ";
-
+    cout << "Escolha uma opcao (0-" << options.size() - 1 << "): ";
     cin >> option;
     cin.ignore(10000, '\n');
     cout << string(2, '\n');
 
-    switch (option)
-    {
+    switch (option) {
     case 0:
         // TERMINAR O PROGRAMA
-        cout << "Saindo do programa. Obrigado por escolher a nossa aplicação!" << endl;
+        cout << "Saindo do programa. Obrigado por escolher a nossa aplicacao!" << endl;
         break;
     case 1:
-        // VER ITENS
-        cout << "Funcionalidade ainda não implementada!" << endl;
+        // TODO: VER ITENS
+        cout << "Funcionalidade ainda nao implementada!" << endl;
         break;
     case 2:
-        // ADICIONAR ITEM
-        cout << "Funcionalidade ainda não implementada!" << endl;
+        // TODO: ADICIONAR ITEM
+        cout << "Funcionalidade ainda nao implementada!" << endl;
         break;
     case 3:
-        // ATUALIZAR ITEMS
-        cout << "Funcionalidade ainda não implementada!" << endl;
+        // TODO: ATUALIZAR ITEMS
+        cout << "Funcionalidade ainda nao implementada!" << endl;
         break;
     case 4:
-        // REMOVER ITEMS
-        cout << "Funcionalidade ainda não implementada!" << endl;
+        // TODO: REMOVER ITEMS
+        cout << "Funcionalidade ainda nao implementada!" << endl;
         break;
     default:
         break;
@@ -53,17 +50,13 @@ void printAndChooseOption(int &option, vector<string> &cartItems, vector<double>
     cout << string(2, '\n');
 }
 
-int main()
-{
-    // DECLARAÇÂO DAS VARIÀVEIS PRINCIPAIS
-
+int main() {
     int option = -1;
     vector<string> cartItems;
     vector<double> prices;
 
     cout << "Bem-vindo ao MyShoppingCart!" << endl;
-
-    // printAndChooseOption(option, cartItems, prices);
+    printAndChooseOption(option, cartItems, prices);
 
     return 0;
 }
