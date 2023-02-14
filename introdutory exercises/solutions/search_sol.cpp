@@ -23,7 +23,7 @@ int main() {
         cout << "Your program has passed the first test! " << "=> " << search({2,3,5,7,8}, 2) << " (answer) = " << 0 << " (result)" <<  endl;
     }
     else {
-        cout << "Your program has failed the first test! " << "=> " << maxSubArray(v1) << " (answer) ≠ " << 0 << " (result)" <<  endl;
+        cout << "Your program has failed the first test! " << "=> " << search({2,3,5,7,8}, 2) << " (answer) ≠ " << 0 << " (result)" <<  endl;
     }
 
     if (search({2,3,5,7,8}, 8) == 4) {
