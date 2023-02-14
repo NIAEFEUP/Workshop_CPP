@@ -8,7 +8,7 @@ int main() {
     int i = 65;
 
     cout << "char: " << c << ", int: " << (int) c << endl;
-    cout << "int: " << i << ", char: " << (char) c << endl << endl;
+    cout << "int: " << i << ", char: " << (char) i << endl << endl;
 
     // exemplo de overflow de inteiros de 32 bits
     int a1 = 10000000, b1 = 10000000;    
