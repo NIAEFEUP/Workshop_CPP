@@ -1,65 +1,65 @@
-#include <vector>
-#include <chrono>
 #include <iostream>
-#include <algorithm>
-
 using namespace std;
 
-int function1(vector<int> values) {
-    int total = 0;
-
-    for (int i = 0; i < values.size(); ++i) {
-        total += values.at(i);
-    }
-
-    return total;
+int add(int first, int second) {
+    return first + second;
 }
 
-int function2(vector<int> &values) {
-    int total = 0;
-
-    for (int i = 0; i < values.size(); ++i) {
-        total += values.at(i);
-    }
-
-    return total;
+int subtract(int first, int second) {
+    return first - second;
 }
 
-int function3(vector<int> *values) {
-    int total = 0;
+int multiply(int first, int second) {
+    return first * second;
+}
 
-    for (int i = 0; i < values->size(); ++i) {
-        total += values->at(i);
+int divide(int first, int second) {
+    return first / second;
+}
+
+char getOperator() {
+   char operation;
+   cout << "Insert operation: "; 
+   cin >> operation;
+   return operation;
+}
+
+int getOperand() {
+    int operand;
+    cout << "Insert operand: ";
+    cin >> operand;
+    return operand;
+}
+
+int performOperation(int first, int second, char op) {
+    switch (op) {
+    case '+':
+        return add(first, second);
+        break;
+    case '-':
+        return subtract(first, second);
+        break;
+    case '*':
+        return multiply(first, second);
+        break;
+    case '/':
+        return divide(first, second);
+        break;
+    default:
+        break;
     }
-
-    return total;
+    return 0;
 }
 
 int main() {
-    vector<int> values(100000000);
-    auto f = []() -> int { return rand() % 10000; };
+    int n1, n2;
+    char op;
 
-    generate(values.begin(), values.end(), f);
-
-
-    auto start = chrono::high_resolution_clock::now();
-    function1(values);
-    auto stop = chrono::high_resolution_clock::now();
-    auto duration = chrono::duration_cast<chrono::milliseconds>(stop - start);
-    cout << "Time taken by function 1: "
-         << duration.count() << " milliseconds" << endl;
-
-    start = chrono::high_resolution_clock::now();
-    function2(values);
-    stop = chrono::high_resolution_clock::now();
-    duration = chrono::duration_cast<chrono::milliseconds>(stop - start);
-    cout << "Time taken by function 2: "
-         << duration.count() << " milliseconds" << endl;
-
-    start = chrono::high_resolution_clock::now();
-    function3(&values);
-    stop = chrono::high_resolution_clock::now();
-    duration = chrono::duration_cast<chrono::milliseconds>(stop - start);
-    cout << "Time taken by function 3: "
-         << duration.count() << " milliseconds" << endl;
+    n1 = getOperand();
+    op = getOperator();
+    n2 = getOperand();
+    
+    int res = performOperation(n1, n2, op);
+    cout << n1 << op << n2 << "=" << res << endl;
+    return 0;
 }
