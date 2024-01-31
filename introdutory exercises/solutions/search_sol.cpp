@@ -5,11 +5,26 @@ using namespace std;
 
 int search(const vector<int> & v, int key) {
     int low = 0, high = (int)v.size() - 1;
-    while (low <= high) {
-        if (key == v[low]) {
-            return low;
+    for (int i = 0; i < v.size(); i++) {
+        if (v[i] == key) {
+            return i;
         }
-        else low++;
+    }
+    return -1;
+}
+
+// AED sneak peek
+int binarySearch(const vector<int> & v, int key) {
+    int low = 0, high = (int)v.size() - 1;
+    while (low <= high) {
+        int middle = low + (high - low) / 2;
+        if (key < v[middle]) {
+            high = middle - 1;
+        }
+        else if (key > v[middle]) {
+            low = middle + 1;
+        }
+        else return middle;
     }
     return -1;
 }
