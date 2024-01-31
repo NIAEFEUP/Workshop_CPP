@@ -1,5 +1,5 @@
 /**
-* Explicar como concaternar, fazer substrings e tirar a length 
+* Explicar como concatenar, fazer substrings e tirar a length 
 *
 */
 
@@ -18,7 +18,7 @@ int main()
 	string e = d.substr(5, 7);
 	cout << e << endl;
 
-	cout << "O tamanho da variavel e e' " << e.size();
+	cout << "O tamanho da variavel e é' " << e.size();
 
 	return 0;
 }
