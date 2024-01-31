@@ -1,8 +1,5 @@
 /**
-* Escolher dois nomes diferentes através de substring, para duas variáveis diferentes
-* Concatenar os nomes numa única variável
-* Mostrar essa variável no ecrã
-* Descobrir o tamanho dessa nova string e mostrar também no ecrã
+* Demonstrar como o cin para de ler a input string quando encontra um espaÃ§o; explicar porque acontece
 */
 
 #include <iostream>

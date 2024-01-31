@@ -1,7 +1,20 @@
 #include <iostream>
 #include <vector>
 
+using namespace std;
+
 int search(const vector<int> & v, int key) {
+    int low = 0, high = (int)v.size() - 1;
+    for (int i = 0; i < v.size(); i++) {
+        if (v[i] == key) {
+            return i;
+        }
+    }
+    return -1;
+}
+
+// AED sneak peek
+int binarySearch(const vector<int> & v, int key) {
     int low = 0, high = (int)v.size() - 1;
     while (low <= high) {
         int middle = low + (high - low) / 2;

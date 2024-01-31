@@ -1,7 +1,7 @@
 /**
-* Explicar o que vari�veis s�o "caixas" onde se guardam coisas e que come�am vazias.
-* Que h� caixas para guitarras, para violinos, enquanto em c++ h� vari�veis para inteiros, strings e booleanos
-* Mandar refazer o programa para perguntar a idade, usando uma vari�vel de inteiro
+* Explicar que variáveis são como "caixas" onde se guardam coisas e que começam vazias.
+* Que há caixas para guitarras, para violinos, enquanto em C++ há variáveis para inteiros, strings e booleanos
+* Mandar refazer o programa para perguntar a idade, usando uma variável de inteiro
 *
 */
 
