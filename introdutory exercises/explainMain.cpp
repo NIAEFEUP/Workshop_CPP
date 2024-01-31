@@ -1,6 +1,6 @@
 /**
-* Dizer por alto que ambos são funções
-* E que quando corremos um ficheiro, ele vai correr a função de main
+* Dizer por alto que ambos sÃ£o funÃ§Ãµes
+* E que quando corremos um ficheiro, ele vai correr a funÃ§Ã£o de main
 * Mete-los a correr isto para eles comprovarem este facto
 *
 */
@@ -9,9 +9,8 @@
 
 using namespace std;
 
-int main()
-{
-    cout << "Hello World!\n";
+int main() {
+	cout << "Hello World!\n";
 	return 0;
 }
 
