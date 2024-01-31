@@ -1,17 +1,15 @@
 #include <iostream>
 #include <vector>
 
+using namespace std;
+
 int search(const vector<int> & v, int key) {
     int low = 0, high = (int)v.size() - 1;
     while (low <= high) {
-        int middle = low + (high - low) / 2;
-        if (key < v[middle]) {
-            high = middle - 1;
+        if (key == v[low]) {
+            return low;
         }
-        else if (key > v[middle]) {
-            low = middle + 1;
-        }
-        else return middle;
+        else low++;
     }
     return -1;
 }
